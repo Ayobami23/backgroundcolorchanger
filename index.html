@@ -49,7 +49,7 @@
     let darkColors = ['RED', 'GREEN', 'BLACK', 'BLUE']
 
     form.addEventListener('submit', (e) => {
-      const upperCaseValue = input.value.toUpperCase()
+      const upperCaseValue = input.value.toUpperCase().trim()
       e.preventDefault()
       document.body.style.backgroundColor = input.value
 
