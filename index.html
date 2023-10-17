@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Color Changer</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      h1 {
+        font-size: 40px;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 2px #000;
+      }
+      input {
+        padding: 10px;
+        outline: none;
+        border: 1px gray solid;
+        border-radius: 2px;
+      }
+
+      label {
+        font-size: 24px;
+        font-weight: bold;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Background Color Changer</h1>
+    <form id="form">
+      <label for="color">Type a Color:</label>
+      <input type="text" id="input" />
+    </form>
+  </body>
+
+  <script>
+    const input = document.querySelector('input')
+    const form = document.querySelector('form')
+    const heading = document.querySelector('h1')
+
+    let darkColors = ['red', 'green', 'black', 'blue']
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      document.body.style.backgroundColor = input.value
+
+      if (darkColors.includes(input.value)) {
+        document.body.style.color = 'white'
+      } else {
+        document.body.style.color = 'black'
+      }
+
+      document.getElementById('form').reset()
+    })
+  </script>
+</html>
