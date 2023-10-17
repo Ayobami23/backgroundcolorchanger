@@ -46,13 +46,14 @@
     const form = document.querySelector('form')
     const heading = document.querySelector('h1')
 
-    let darkColors = ['red', 'green', 'black', 'blue']
+    let darkColors = ['RED', 'GREEN', 'BLACK', 'BLUE']
 
     form.addEventListener('submit', (e) => {
+      const upperCaseValue = input.value.toUpperCase()
       e.preventDefault()
       document.body.style.backgroundColor = input.value
 
-      if (darkColors.includes(input.value)) {
+      if (darkColors.includes(upperCaseValue)) {
         document.body.style.color = 'white'
       } else {
         document.body.style.color = 'black'
